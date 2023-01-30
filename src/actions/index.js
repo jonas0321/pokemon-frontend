@@ -11,7 +11,7 @@ export const POST_POKEMON = "POST_POKEMON";
 export const GET_DETAILS = "GET_DETAILS";
 export const CLEAN_DETAIL = "CLEAN_DETAIL";
 export const CLEAN_POKEMONS = "CLEAN_POKEMONS";
-
+// export const GET_ANIMALS = "GET_ANIMALS";
 export const getPokemons = () => {
   return async (dispatch) => {
     try {
@@ -26,7 +26,20 @@ export const getPokemons = () => {
     }
   };
 };
-
+/* export const getanimals = () => {
+  return async (dispatch) => {
+    try {
+      let url = "http://localhost:3000/api/v1/animals";
+      let json = await axios.get(url);
+      return dispatch({
+        type: GET_ANIMALS,
+        payload: json.data,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};*/
 export const cleanPokemons = (dispatch) => {
   return dispatch({
     type: CLEAN_POKEMONS,
